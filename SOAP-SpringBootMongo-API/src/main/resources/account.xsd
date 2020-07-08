@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.account.com/spring/soap/api/getAccount"
+	xmlns:acc="http://www.account.com/spring/soap/api/getAccount"
+	xmlns:tns="http://www.account.com/spring/soap/api/getAccount"
+	elementFormDefault="qualified">
+
+	<xsd:element name="AccountRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="sort_code" type="xsd:int" />
+				<xsd:element name="account_number" type="xsd:long" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="AccountResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="accountInfo" type="tns:accountInfo" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:complexType name="accountInfo">
+			<xsd:sequence>
+				<xsd:element name="id" type="xsd:long" />
+				<xsd:element name="account_number" type="xsd:long" />
+				<xsd:element name="type" type="xsd:string" />
+				<xsd:element name="open_date" type="xsd:date" />
+				<xsd:element name="currency" type="xsd:string" />
+				<xsd:element name="scheme" type="xsd:string" />
+				<xsd:element name="card_number" type="xsd:long" />
+				<xsd:element name="charges" type="xsd:int" />
+				<xsd:element name="overdraft_amout" type="xsd:int" />
+				<xsd:element name="overdraft_limit" type="xsd:int" />
+				<xsd:element name="sort_code" type="xsd:int" />
+				<xsd:element name="active" type="xsd:string" />
+			</xsd:sequence>
+		</xsd:complexType>
+
+</xsd:schema>
+
